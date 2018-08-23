@@ -1,0 +1,18 @@
+---
+title: "Notas ahp"
+output: html_document
+---
+
+
+## Sobre AHP
+
+  * O AHP é um método proposto por Saaty nos anos 70, afim de auxiliar o AMD (Auxílio Multicritério à Decisão) em relação a análise de multicritérios. 
+  * O AHP objetiva a seleção/escolha de alternativas, em um processo que considere diferentes critérios de avaliação. Este método se baseia em três tipos de pensamentos  analíticos : Construção de hierarquias, definição de prioridades e consistência lógica.
+  
+## Etapas do AHP
+* Construção de hierarquia, identificando: foco principal; critérios; subcritérios (quando houverem); e, alternativas. Estes elementos formam a estrutura da hierarquia;
+* Aquisição de dados ou coleta de julgamentos de valor emitidos por especialistas;
+* Síntese dos dados obtidos dos julgamentos, calculando-se a prioridade de cada alternativa em relação ao foco principal; e,
+* Análise da consistência do julgamento, identzificando o quanto o sistema de classificação utilizado é consistente na classificação das alternativas viáveis. Vale registrar que o sistema é
+composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor e pelos avaliadores.
+
