@@ -23,3 +23,10 @@ composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor
 * Conjunto de alternativas viáves : São as escolhas, alternativas .
 * Conjunto de critérios : É o conjunto de prioridades, atributos, quesitos ou pontos de vista do qual deve se avaliar o desempenho das alternativas. Este conjunto deve ser : Completo, Mínimo(não deve ter redundância) e Operacional.
 
+## Etapas do AHP
+
+* Definição do foco principal : Definir o objeto central o mais claro possível.
+* Identificação das alternativas viáveis : Estabelecer um grupo de alternativas que satisfaçam as condições propostas.
+* Identificação do conjunto de critérios : 
+
+
