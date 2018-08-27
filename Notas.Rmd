@@ -16,3 +16,10 @@ output: html_document
 * Análise da consistência do julgamento, identzificando o quanto o sistema de classificação utilizado é consistente na classificação das alternativas viáveis. Vale registrar que o sistema é
 composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor e pelos avaliadores.
 
+## Construção de Hierarquias 
+    Os elementos chaves de uma hierarquia para o tratamento de problemas de decisão são :
+ 
+* Foco principal : Objetivo global. Ex: Compra de um carro, escolha de moradia e etc.
+* Conjunto de alternativas viáves : São as escolhas, alternativas .
+* Conjunto de critérios : É o conjunto de prioridades, atributos, quesitos ou pontos de vista do qual deve se avaliar o desempenho das alternativas. Este conjunto deve ser : Completo, Mínimo(não deve ter redundância) e Operacional.
+
