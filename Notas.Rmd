@@ -27,6 +27,8 @@ composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor
 
 * Definição do foco principal : Definir o objeto central o mais claro possível.
 * Identificação das alternativas viáveis : Estabelecer um grupo de alternativas que satisfaçam as condições propostas.
-* Identificação do conjunto de critérios : 
+* Identificação do conjunto de critérios : Estabelecer o conjunto de critérios a serem considerados de tal forma que se aproxime o máximo possível da realidade, com pouca abstração.
+* Estruturação da hierarquia : Elaborar um desenho da hierarquia, para ilustar como os elementos se relacionam. Exemplo : ![](F://AHP//AHP//Figuras//1.png)
+pag46
 
 
