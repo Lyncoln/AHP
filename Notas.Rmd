@@ -3,7 +3,7 @@ title: "Notas ahp"
 output: html_document
 ---
 
-```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 setwd("F://AHP//AHP")
 ```
 
@@ -32,6 +32,8 @@ composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor
 * Identificação das alternativas viáveis : Estabelecer um grupo de alternativas que satisfaçam as condições propostas.
 * Identificação do conjunto de critérios : Estabelecer o conjunto de critérios a serem considerados de tal forma que se aproxime o máximo possível da realidade, com pouca abstração.
 * Estruturação da hierarquia : Elaborar um desenho da hierarquia, para ilustar como os elementos se relacionam. Exemplo : ![](Figuras//1.png)
-* Essa figura só possui uma camada de critério, dependendo do grau de complexidade pode haver mais de uma camada de critérios.Estas camadas são geradas a partir da estruturação dos critérios em subcritérios. A introdução de subcritérios na hierarquia é uma das ações recomendadas, quando houver dificuldade do avaliador julgar o desempenho das alternativas à luz de um determinado critério. Exemplos :  ![](Figuras//2.png) ![](Figuras//3.png)
+* Essa figura só possui uma camada de critério, dependendo do grau de complexidade pode haver mais de uma camada de critérios.Estas camadas são geradas a partir da estruturação dos critérios em subcritérios. A introdução de subcritérios na hierarquia é uma das ações recomendadas, quando houver dificuldade do avaliador julgar o desempenho das alternativas à luz de um determinado critério. Exemplos:  
+![](Figuras//2.png) ![](Figuras//3.png)
 
+Capítulo 3 pag 51
 
