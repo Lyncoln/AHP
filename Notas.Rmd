@@ -35,5 +35,26 @@ composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor
 * Essa figura só possui uma camada de critério, dependendo do grau de complexidade pode haver mais de uma camada de critérios.Estas camadas são geradas a partir da estruturação dos critérios em subcritérios. A introdução de subcritérios na hierarquia é uma das ações recomendadas, quando houver dificuldade do avaliador julgar o desempenho das alternativas à luz de um determinado critério. Exemplos:  
 ![](Figuras//2.png) ![](Figuras//3.png)
 
-Capítulo 3 pag 51
+### Julgamentos de valor Capítulo 3 
+
+* O que é julgar? No AHP o avaliador compara par a par(ou paritariamente) os elementos de uma camada ou nível de heirarquia à luz de cada um dos elementos em conexão com em uma camada superior da hierarquia.
+* Seja a hierarquia ilustrada no exemplo "Escolha de automóvel: hierarquia com duas camadas de critérios". Para esta hierarquia, devem ser comparados paritariamente o desempenho de A1 , A2 e A3 à luz de cada um dos elementos de camadas superiores da hierarquia, que estejam diretamente conectados as alternativas.( ver pag 53)
+* A importância dos subcritérios também é comparada à luz de cada um dos critérios ligados aos mesmos.
+* Finalmente, compara-se a importância dos critérios à luz do foco principal.
+
+* Como julgar ? Saaty apresenta uma escala específica para a "padronização" das emissões de julgamento de valor pelos avaliadores. Busca-se captar( O que é diferente de eliminar ) a subjetividade inerente a utlização de variáveis qualitativas. 
+
+![](Figuras//4.png)
+<br><br>
+* Métodos de aquisição de dados : A coleta de julgamentos paritários é uma das etapas fundamentais ao uso do AHP. Deve-se buscar desenvolver mecanismos simples e de fácil entendimento para que os avaliadores possam se concentrar apenas na emissão de julgamentos.
+
+* Tendo base essa hierarquia : <br>
+<img src="Figuras//5.png" width="500" height="500" />
+* Temos esse exemplo de formulário comparando A1 com A2 : (interpretação pag 59) ![](Figuras//6.png)
+<br><br>
+
+* Quem julga ? São os avaliadores responsáveis pela análise de desempenho(ou importância) dos elementos de uma camada em relação aqueles que estão conectados na camada superior dessa camda. A eficácia dos resultados está associada à competência dos avaliadores em emitir os jungamentos de valor. Por esse motivo, desse ser consultados avaliadores que possuem alto conhecimento sobre o tópico em julgamento.
+
+
+### Cálculo das prioridades Capítulo 4
 
