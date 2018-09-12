@@ -56,5 +56,25 @@ composto pela hierarquia, pelos métodos de aquisição dos julgamentos de valor
 * Quem julga ? São os avaliadores responsáveis pela análise de desempenho(ou importância) dos elementos de uma camada em relação aqueles que estão conectados na camada superior dessa camda. A eficácia dos resultados está associada à competência dos avaliadores em emitir os jungamentos de valor. Por esse motivo, desse ser consultados avaliadores que possuem alto conhecimento sobre o tópico em julgamento.
 
 
-### Cálculo das prioridades Capítulo 4
+### Cálculo das prioridades Capítulo 4 (Importante!!!)
+
+* Etapas da priorização : Obtenção do quadro de julgamentos, Obtenção do quadro de julgamentos normalizados, Obtenção de prioridades médias locais e Obtenção de prioridades médias globais.
+* Escala de conversão : <img src="Figuras//7.png" width="500" height="500" />
+* (ver exemplo desse capítulo se estiver com dúvidas).
+* Serão seguidos os seguintes passos :
+1 - Construir matrízes de comparação para todos os cruzamentos de subcritérios.
+2 - Normalizar as matrizes (Somatório dos elementos de cada coluna do quadro de julgamentos).
+3 - Dividir cada elemento pelo resultado da soma de sua coluna.
+4 - Criar a coluna PML ( prioridades médias locais ) que tem como elemento a soma das linhas divido pelo total de linhas.
+5 - Criar a PG( Prioridades médias globais )Para calcular o PG é necessário combinar os PML's, no vetor de prioridades global. (ver exemplo do capítulo pag 80 ) e esse será o vetor que armazena os resultados finais.
+
+### Análise de consistência Capítulo 5 
+* Mesmo quando especialistas realizam os julgamentos de valor, pode haver inconsistência, principalmente quando há um grande números de julgamentos. Calcula-se a inconsistência das matrízes pela seguinte formula : ![](Figuras//8.png)
+Onde lambda max = maior auto-valor da matriz julgamento e N a ordem da matríz.
+*O Índice de Consistência avalia o grau de inconsistência da matriz de
+julgamentos paritários.
+* Saaty propôs o uso da Razão de Consistência (RC), que permite avaliar a inconsistência em função da ordem da matriz de julgamentos. Caso este valor seja maior do que 0,1 , recomenda-se a revisão do modelo e/ou dos julgamentos. A razão de consistência é calculada por: RC = IC/R onde R é um índice de consistência obtido para uma matríz recíproca, com elementos não negativos e gerados de forma randômica.
+
+
+
 
