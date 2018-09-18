@@ -34,8 +34,31 @@ xablau = function(dados) {
 }
 
 
+# Vai concatenar todas as funçoes
+junta = function(lista){
+  lista_aux = AHP(lista)
+  lista_aux2 = transforma(lista_aux)
+  lista_final = xablau(lista_aux2)
+  return(lista_final)
+}
+dados=junta(exemplo)
 
 
+
+### VER SE ESTÀ FUNCIONANDO!!!
+AAA = function(lista){
+  tabela = c(0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45)
+  Autoval = list()
+  print(lista)
+  for(i in 1:length(lista)){
+    Autoval[[i]] = c(Re(eigen(lista[[i]])$values)[1],(abs(Re(eigen(lista[[i]])$values)[1]-length(lista[[i]][1,]))/(length(lista[[i]][1,])-1))/tabela[length(lista[[i]][1,])])
+  }
+  names(Autoval) = rep("Autovalor/Índice de consistência",length(Autoval))
+  return(Autoval)
+}
+AAA(exemplo)
+
+x = list()
 
 
 
@@ -57,27 +80,7 @@ teste = AHP(exemplo) %>%
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+teste = AHP(exemplo)
 
 op_carros = rep(LETTERS[1:length(teste[[1]])],each = length(teste)-1 )
 criterio = rep(names(teste)[-length(names(teste))],length(unique(op_carros)))
