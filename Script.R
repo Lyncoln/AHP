@@ -1,6 +1,8 @@
 library(tidyverse)
 
-AHP = function(lista){
+#Função para normalização da matriz de julgamentos
+
+normaliza = function(lista){
   lista_aux = list()
   for( i in 1:length(lista)){
     aux = lista[[i]] %>%  apply(2,sum)
@@ -36,7 +38,7 @@ xablau = function(dados) {
 
 # Vai concatenar todas as funçoes
 junta = function(lista){
-  lista_aux = AHP(lista)
+  lista_aux = normaliza(lista)
   lista_aux2 = transforma(lista_aux)
   lista_final = xablau(lista_aux2)
   return(lista_final)
@@ -74,13 +76,13 @@ FP = matrix(c(1,1/5,3,1/5,1/3,5,1,5,3,3,1/3,1/5,1,1/3,1/3,5,1/3,3,1,1,3,1/3,3,1,
 
 #Criação das matrizes
 exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
-teste = AHP(exemplo) %>% 
+teste = normaliza(exemplo) %>% 
   transforma() %>% 
   xablau()
 
 
 
-teste = AHP(exemplo)
+teste = normaliza(exemplo)
 
 op_carros = rep(LETTERS[1:length(teste[[1]])],each = length(teste)-1 )
 criterio = rep(names(teste)[-length(names(teste))],length(unique(op_carros)))
