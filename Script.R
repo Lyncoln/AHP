@@ -43,7 +43,7 @@ junta = function(lista){
   lista_final = xablau(lista_aux2)
   return(lista_final)
 }
-dados=junta(exemplo)
+
 
 
 
@@ -58,21 +58,19 @@ AAA = function(lista){
   names(Autoval) = rep("Autovalor/Índice de consistência",length(Autoval))
   return(Autoval)
 }
-AAA(exemplo)
-
-x = list()
-
-
-
 
 
 #Tenho que nomear as matrizes
-CF = matrix(c(1,1/3,1/6,3,1,1/2,6,2,1),nrow = 3,byrow = T)
-A = matrix(c(1,1/2,1/2,2,1,2,2,1/2,1),nrow = 3,byrow = T)
-PS = matrix(c(1,1,2,1,1,1,1/2,1,1),nrow = 3,byrow = T)
-RV = matrix(c(1,2,3,1/2,1,2,1/3,1/2,1),nrow = 3,byrow = T)
-M = matrix(c(1,5,3,1/5,1,1/3,1/3,3,1),nrow = 3,byrow = T)
-FP = matrix(c(1,1/5,3,1/5,1/3,5,1,5,3,3,1/3,1/5,1,1/3,1/3,5,1/3,3,1,1,3,1/3,3,1,1),nrow = 5,byrow = T)
+#Precisa definir o número de alternativas (m=3)
+#Precisa definir o número de critérios (k=5)
+#Vai ler k matrizes (MACi, i=1, ..., k) mxm que comparam as alternativas para cada critério
+#Vai ler uma matriz (MCC) kxk que compara os critérios
+CF = matrix(c(1,1/3,1/6,3,1,1/2,6,2,1),nrow = 3,byrow = T) #nome MAC1
+A = matrix(c(1,1/2,1/2,2,1,2,2,1/2,1),nrow = 3,byrow = T) #nome MAC2
+PS = matrix(c(1,1,2,1,1,1,1/2,1,1),nrow = 3,byrow = T) #nome MAC3
+RV = matrix(c(1,2,3,1/2,1,2,1/3,1/2,1),nrow = 3,byrow = T) #nome MAC4
+M = matrix(c(1,5,3,1/5,1,1/3,1/3,3,1),nrow = 3,byrow = T) #nome MAC5
+FP = matrix(c(1,1/5,3,1/5,1/3,5,1,5,3,3,1/3,1/5,1,1/3,1/3,5,1/3,3,1,1,3,1/3,3,1,1),nrow = 5,byrow = T) #nome MCC
 
 #Criação das matrizes
 exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
@@ -81,6 +79,8 @@ teste = normaliza(exemplo) %>%
   xablau()
 
 
+dados=junta(exemplo)
+AAA(exemplo)
 
 teste = normaliza(exemplo)
 

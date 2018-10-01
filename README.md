@@ -1,4 +1,7 @@
 # AHP
-Estudo sobre o método AHP
+Estudo sobre o método AHP e criação de um pacote.
 
-Lyncoln Sousa.
+Projeto PIBIC 2018/19 - Universidade Federal Fluminense
+
+Lyncoln Sousa - aluno bolsista
+Luciane Alcoforado - profa. orientadora
