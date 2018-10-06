@@ -1,4 +1,5 @@
 library(tidyverse)
+library(readxl)
 
 #Função para normalização da matriz de julgamentos
 
@@ -65,35 +66,36 @@ AAA = function(lista){
 #Precisa definir o número de critérios (k=5)
 #Vai ler k matrizes (MACi, i=1, ..., k) mxm que comparam as alternativas para cada critério
 #Vai ler uma matriz (MCC) kxk que compara os critérios
-CF = matrix(c(1,1/3,1/6,3,1,1/2,6,2,1),nrow = 3,byrow = T) #nome MAC1
+"CF = matrix(c(1,1/3,1/6,3,1,1/2,6,2,1),nrow = 3,byrow = T) #nome MAC1
 A = matrix(c(1,1/2,1/2,2,1,2,2,1/2,1),nrow = 3,byrow = T) #nome MAC2
 PS = matrix(c(1,1,2,1,1,1,1/2,1,1),nrow = 3,byrow = T) #nome MAC3
 RV = matrix(c(1,2,3,1/2,1,2,1/3,1/2,1),nrow = 3,byrow = T) #nome MAC4
 M = matrix(c(1,5,3,1/5,1,1/3,1/3,3,1),nrow = 3,byrow = T) #nome MAC5
 FP = matrix(c(1,1/5,3,1/5,1/3,5,1,5,3,3,1/3,1/5,1,1/3,1/3,5,1/3,3,1,1,3,1/3,3,1,1),nrow = 5,byrow = T) #nome MCC
+exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
+"
+
+# Ler diretamente da planilha do excel. Retorna uma lista de tibbles. 
+# Lembrar que na arrumação das planilhas do excel devemos ter : 
+# MAC1, .... , MACn , MCC 
+# A primeira coluna da mcc tem que ser a primeira planilha........
+
+Ler = function(caminho){
+  exemplo = lapply(excel_sheets(caminho), read_excel, path = caminho, col_names = F)
+  names(exemplo) = excel_sheets(caminho)
+  return(exemplo)
+}
+
+exemplo = Ler("F://AHP//AHP//Documentação//BD_teste.xlsx")
+
+
 
 #Criação das matrizes
-exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
-teste = normaliza(exemplo) %>% 
-  transforma() %>% 
-  xablau()
 
+teste = normaliza(exemplo) %>% 
+  transforma()
 
 dados=junta(exemplo)
 AAA(exemplo)
 
 teste = normaliza(exemplo)
-
-op_carros = rep(LETTERS[1:length(teste[[1]])],each = length(teste)-1 )
-criterio = rep(names(teste)[-length(names(teste))],length(unique(op_carros)))
-prob = NULL
-for( i in 1:length(teste[[1]])){
-  prob = c(prob,unlist(lapply(teste[-length(teste)], function(x)x[i])))
-}
-peso = rep(teste[[length(teste)]], length(unique(op_carros)))
-dados = tibble(op_carros,criterio,prob,peso)
-dados %>% 
-  mutate(valor = prob*peso) %>% 
-  group_by(op_carros) %>% 
-  summarise(xablau = sum(valor)) 
-
