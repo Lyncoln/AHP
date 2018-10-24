@@ -1,0 +1,17 @@
+Package: AHP
+Title: Método AHP
+Version: 0.0.0.9000
+Authors@R: person("Lyncoln", "Sousa", email = "lyncolnsousa@id.uff.br", role = c("aut", "cre"))
+Description: 
+Depends: R (>= 3.2.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    readxl
+RoxygenNote: 6.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

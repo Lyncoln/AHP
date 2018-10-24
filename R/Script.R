@@ -1,6 +1,3 @@
-library(tidyverse)
-library(readxl)
-
 #Função para normalização da matriz de julgamentos
 
 normaliza = function(lista){
@@ -78,6 +75,7 @@ exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
 # Ler diretamente da planilha do excel. Retorna uma lista de tibbles. 
 # Lembrar que na arrumação das planilhas do excel devemos ter : 
 # MAC1, .... , MACn , MCC 
+# As planilhas devem ser nomeadas
 # A primeira coluna da mcc tem que ser a primeira planilha........
 
 Ler = function(caminho){
@@ -86,16 +84,6 @@ Ler = function(caminho){
   return(exemplo)
 }
 
-exemplo = Ler("F://AHP//AHP//Documentação//BD_teste.xlsx")
 
 
 
-#Criação das matrizes
-
-teste = normaliza(exemplo) %>% 
-  transforma()
-
-dados=junta(exemplo)
-AAA(exemplo)
-
-teste = normaliza(exemplo)
