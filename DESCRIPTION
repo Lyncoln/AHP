@@ -1,7 +1,7 @@
 Package: AHP
 Title: Método AHP
 Version: 0.0.0.9000
-Authors@R: person("Lyncoln", "Sousa", email = "lyncolnsousa@id.uff.br", role = c("aut", "cre"))
+Authors@R: c(person("Lyncoln", "Sousa", email = "lyncolnsousa@id.uff.br", role = c("aut", "cre")), person("Luciane", "Alcoforado", email = "lucianea@id.uff.br", role = c("aut", "cre")))
 Description: 
 Depends: R (>= 3.2.1)
 License: GPL-3
