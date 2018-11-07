@@ -4,7 +4,7 @@
 \alias{AHP}
 \title{Método AHP}
 \usage{
-AHP(caminho)
+AHP(caminho, nomes = "padrao")
 }
 \arguments{
 \item{caminho}{Um caminho para um arquivo xlsx que contenha as planilhas com os dados}

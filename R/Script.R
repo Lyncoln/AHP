@@ -13,8 +13,9 @@ normaliza = function(lista){
 
 #Bunitação 
 
-transforma = function( lista ){
-  item = rep(LETTERS[1:length(lista[[1]])],each = length(lista)-1 )
+transforma = function( lista ,nomes = "padrao"){
+  if(nomes[1]=="padrao") item = rep(LETTERS[1:length(lista[[1]])],each = length(lista)-1 )
+  else item = rep(nomes,each = length(lista)-1)
   criterio = rep(names(lista)[-length(names(lista))],length(unique(item)))
   prob = NULL
   for( i in 1:length(lista[[1]])){

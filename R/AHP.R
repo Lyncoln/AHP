@@ -15,10 +15,25 @@
 #' @export
 #' @import dplyr readxl
 #' 
-AHP = function(caminho){
+AHP = function(caminho,nomes = "padrao"){
   BD = Ler(caminho) %>% 
     normaliza() %>% 
-    transforma() %>% 
+    transforma(nomes) %>% 
     xablau()
   return(BD)
 }
+
+#'Exemplo de dados 1
+#'
+#'@format Exemplo de dados lido de um xlsx
+#'
+#'@source dados1
+"dados1"
+
+
+#'Exemplo de dados 2
+#'
+#'@format Exemplo de dados lido de um xlsx
+#'
+#'@source dados2
+"dados2"
