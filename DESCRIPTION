@@ -1,8 +1,17 @@
 Package: AHP
 Title: Método AHP
 Version: 0.0.0.9000
-Authors@R: person("Lyncoln", "Sousa", email = "lyncolnsousa@id.uff.br", role = c("aut", "cre"))
-Description: 
+Authors@R: c(
+    person("Lyncoln", "Sousa", email = "lyncolnsousa@id.uff.br", role = c("aut", "cre")),
+    person("Luciane", "Alcoforado", email = "lucianea@id.uff.br", role = c("aut", "cre"))
+    )
+Description: Desenvolvimento de pacote para o método AHP,
+de acordo com o projeto de iniciação científica proposto
+pela profa. Dra. Luciane intitulado "Implementando a AHP com o R"
+Grande Área: Ciências Exatas e da Terra
+Área: Probabilidade e Estatística
+Sub-área: Estatística
+Iniciado em ago/2018 com o apoio do PIBIC/UFF (bolsa de iniciação científica)
 Depends: R (>= 3.2.1)
 License: GPL-3
 Encoding: UTF-8
