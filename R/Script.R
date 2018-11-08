@@ -11,7 +11,7 @@ normaliza = function(lista){
   return(lista_aux)
 }
 
-#Bunitação 
+#Bunitação
 
 transforma = function( lista ,nomes = "padrao"){
   if(nomes[1]=="padrao") item = rep(LETTERS[1:length(lista[[1]])],each = length(lista)-1 )
@@ -27,10 +27,11 @@ transforma = function( lista ,nomes = "padrao"){
 }
 
 xablau = function(dados) {
-  dados %>% 
-    mutate(valor = prob*peso) %>% 
-    group_by(item) %>% 
-    summarise(xablau = sum(valor)) %>% 
+  dados %>%
+    mutate(valor = prob*peso) %>%
+    group_by(item) %>%
+    summarise(Pesos = sum(valor)) %>%
+    arrange(Pesos) %>%
     return()
 }
 
@@ -73,9 +74,9 @@ FP = matrix(c(1,1/5,3,1/5,1/3,5,1,5,3,3,1/3,1/5,1,1/3,1/3,5,1/3,3,1,1,3,1/3,3,1,
 exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
 "
 
-# Ler diretamente da planilha do excel. Retorna uma lista de tibbles. 
-# Lembrar que na arrumação das planilhas do excel devemos ter : 
-# MAC1, .... , MACn , MCC 
+# Ler diretamente da planilha do excel. Retorna uma lista de tibbles.
+# Lembrar que na arrumação das planilhas do excel devemos ter :
+# MAC1, .... , MACn , MCC
 # As planilhas devem ser nomeadas
 # A primeira coluna da mcc tem que ser a primeira planilha........
 
