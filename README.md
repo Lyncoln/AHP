@@ -5,3 +5,8 @@ Projeto PIBIC 2018/19 - Universidade Federal Fluminense
 
 Lyncoln Sousa - aluno bolsista
 Luciane Alcoforado - profa. orientadora
+
+Colaboradores:
+
+Profa. Alessandra dos Santos Simão
+Prof. Steven Dutt Ross
