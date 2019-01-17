@@ -13,4 +13,4 @@ Profa. Alessandra dos Santos Simão
 
 Prof. Steven Dutt Ross
 
-Leonador Filgueira
+Leonardo Filgueira
