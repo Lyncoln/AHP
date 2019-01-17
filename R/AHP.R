@@ -13,6 +13,9 @@
 #'
 #'@import readxl
 #'@import dplyr
+#'@import tidyr
+#'@import tibble
+#'@import purrr
 #'
 #'@export
 
@@ -58,6 +61,9 @@ tabela_ahp_lista = function(dados, nomes = "padrao", prop = T) {
 #'
 #'@import readxl
 #'@import dplyr
+#'@import tidyr
+#'@import tibble
+#'@import purrr
 #'
 #'@export
 tabela_ahp_xlsx = function(caminho, nomes = "padrao", prop = T){

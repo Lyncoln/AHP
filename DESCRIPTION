@@ -24,4 +24,6 @@ VignetteBuilder: knitr
 Imports: 
     dplyr,
     readxl,
-    tidyr
+    tidyr,
+    tibble,
+    purrr
