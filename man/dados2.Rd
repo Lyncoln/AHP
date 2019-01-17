@@ -4,7 +4,7 @@
 \name{dados2}
 \alias{dados2}
 \title{Exemplo de dados 2}
-\format{Exemplo de dados lido de um xlsx}
+\format{Exemplo de dados obtidos para utlizar o método AHP}
 \source{
 dados2
 }

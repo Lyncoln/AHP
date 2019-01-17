@@ -23,16 +23,16 @@ transforma = function( lista ,nomes = "padrao"){
   }
   peso = rep(lista[[length(lista)]], length(unique(item)))
   dados = tibble(item,criterio,prob,peso)
-  return(dados)
+  dados = dados %>% mutate(valor = peso*prob)
+  return(select(dados,-prob,-peso))
 }
 
 xablau = function(dados) {
-  dados %>%
-    mutate(valor = prob*peso) %>%
+  BD = dados %>%
     group_by(item) %>%
     summarise(Pesos = sum(valor)) %>%
-    arrange(Pesos) %>%
-    return()
+    arrange(Pesos) 
+    return(BD)
 }
 
 
@@ -51,12 +51,14 @@ junta = function(lista){
 AAA = function(lista){
   tabela = c(0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45)
   Autoval = list()
-  print(lista)
   for(i in 1:length(lista)){
-    Autoval[[i]] = c(Re(eigen(lista[[i]])$values)[1],(abs(Re(eigen(lista[[i]])$values)[1]-length(lista[[i]][1,]))/(length(lista[[i]][1,])-1))/tabela[length(lista[[i]][1,])])
+    Autoval[[i]] = (abs(Re(eigen(lista[[i]])$values)[1]-length(lista[[i]][1,]))/(length(lista[[i]][1,])-1))/tabela[length(lista[[i]][1,])]
   }
-  names(Autoval) = rep("Autovalor/Índice de consistência",length(Autoval))
-  return(Autoval)
+  names(Autoval) = names(lista)
+  auxiliar = as.tibble(Autoval)
+  auxiliar = as.data.frame(t(auxiliar)) %>% rownames_to_column("criterio")
+  auxiliar = auxiliar %>% rename(inconsistencia = V1)
+  return(auxiliar)
 }
 
 

@@ -4,7 +4,7 @@ output: html_document
 ---
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-setwd("F://AHP//AHP")
+setwd("F://GitHub//AHP")
 ```
 
 ## Sobre AHP
