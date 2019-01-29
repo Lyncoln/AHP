@@ -4,7 +4,10 @@
 \name{dados1}
 \alias{dados1}
 \title{Exemplo de dados 1}
-\format{Exemplo de dados obtidos para utlizar o método AHP}
+\format{Nesse exemplo teremos quadros de julgamentos onde o objetivo e adquirir o melhor carro entre 3 alternativas.
+Temos que: AQ = Custo de Aquisicao, CF = Conforto, MA = Custo de manuntencao, PS = Prestigio, RV = Preco de revenda.
+No primeiro elemento da lista temos o quadro de julgamento do desempenho das alternativas a luz do criterio conforto... 
+e pelo fim temos o quadro de julgamento da importancia dos criterios a luz do objetivo.}
 \source{
 dados1
 }

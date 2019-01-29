@@ -1,4 +1,4 @@
-#Função para normalização da matriz de julgamentos
+#Função que gera vetores de pesos para criterios e alternativas
 
 normaliza = function(lista){
   lista_aux = list()
@@ -11,7 +11,7 @@ normaliza = function(lista){
   return(lista_aux)
 }
 
-#Bunitação
+#Função que trata os dados da função normaliza, deixando de um jeito para melhor ser trabalhado
 
 transforma = function( lista ,nomes = "padrao"){
   if(nomes[1]=="padrao") item = rep(LETTERS[1:length(lista[[1]])],each = length(lista)-1 )
@@ -27,6 +27,7 @@ transforma = function( lista ,nomes = "padrao"){
   return(select(dados,-prob,-peso))
 }
 
+#Função que mostra o peso final das alternativas estudadas
 xablau = function(dados) {
   BD = dados %>%
     group_by(item) %>%
@@ -48,6 +49,7 @@ junta = function(lista){
 
 
 ### VER SE ESTÀ FUNCIONANDO!!!
+#Função que calcula o indice de consistencia de saaty
 AAA = function(lista){
   tabela = c(0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45)
   Autoval = list()
@@ -57,7 +59,7 @@ AAA = function(lista){
   names(Autoval) = names(lista)
   auxiliar = as.tibble(Autoval)
   auxiliar = as.data.frame(t(auxiliar)) %>% rownames_to_column("criterio")
-  auxiliar = auxiliar %>% rename(inconsistencia = V1)
+  auxiliar = auxiliar %>% rename("Indice de consistencia de saaty" = V1)
   return(auxiliar)
 }
 
@@ -82,6 +84,7 @@ exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
 # As planilhas devem ser nomeadas
 # A primeira coluna da mcc tem que ser a primeira planilha........
 
+#Função que transforma uma planilha do excel em uma lista 
 Ler = function(caminho){
   exemplo = lapply(excel_sheets(caminho), read_excel, path = caminho, col_names = F)
   names(exemplo) = excel_sheets(caminho)
