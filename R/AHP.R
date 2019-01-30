@@ -38,6 +38,18 @@ tabela_ahp_lista = function(dados, nomes = "padrao", prop = T) {
     bind_rows(organiza) %>% 
     select(criterio,Pesos,everything()) %>% 
     inner_join(AAA(dados),by = "criterio")
+  #Estou criando uma coluna chamada consistente que irá avaliar se o quadro de julgamento é consistente pelo método de saaty
+  final$Consistente = ifelse(final$'Razao de consistencia de saaty'<0.1,"Sim","Nao")
+  inconsistentes = final %>% 
+    filter(Consistente == "Nao") %>% 
+    pull(criterio) 
+  if(length(inconsistentes>0)) warning("Quadro(s) de julgamento(s): ", paste(inconsistentes, collapse = ", "), " inadequado(s)")
+  #
+  #Aqui irei dizer qual é a melhor alternativa para ser escolhida
+  alternativas = junta(dados,nomes)
+  melhor = alternativas$item[which.max(alternativas$Pesos)]
+  print(paste("A melhor escolha e a alternativa: ",melhor))
+  #
   if(prop == F) return(final)
   else{
     final = suppressWarnings(mutate_if(final,is_numeric, function(x){paste(round(x*100,2),"%",sep="")}))

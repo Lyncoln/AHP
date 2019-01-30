@@ -38,9 +38,9 @@ xablau = function(dados) {
 
 
 # Vai concatenar todas as funçoes
-junta = function(lista){
+junta = function(lista, nomes = "padrao"){
   lista_aux = normaliza(lista)
-  lista_aux2 = transforma(lista_aux)
+  lista_aux2 = transforma(lista_aux, nomes)
   lista_final = xablau(lista_aux2)
   return(lista_final)
 }
@@ -57,9 +57,9 @@ AAA = function(lista){
     Autoval[[i]] = (abs(Re(eigen(lista[[i]])$values)[1]-length(lista[[i]][1,]))/(length(lista[[i]][1,])-1))/tabela[length(lista[[i]][1,])]
   }
   names(Autoval) = names(lista)
-  auxiliar = as.tibble(Autoval)
+  auxiliar = as_tibble(Autoval)
   auxiliar = as.data.frame(t(auxiliar)) %>% rownames_to_column("criterio")
-  auxiliar = auxiliar %>% rename("Indice de consistencia de saaty" = V1)
+  auxiliar = auxiliar %>% rename("Razao de consistencia de saaty" = V1)
   return(auxiliar)
 }
 
@@ -86,7 +86,7 @@ exemplo = list(CF=CF,A=A,PS=PS,RV=RV,M=M,FP=FP)
 
 #Função que transforma uma planilha do excel em uma lista 
 Ler = function(caminho){
-  exemplo = lapply(excel_sheets(caminho), read_excel, path = caminho, col_names = F)
+  exemplo = suppressMessages(lapply(excel_sheets(caminho), read_excel, path = caminho, col_names = F))
   names(exemplo) = excel_sheets(caminho)
   return(exemplo)
 }
