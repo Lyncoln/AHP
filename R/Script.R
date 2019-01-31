@@ -54,7 +54,7 @@ AAA = function(lista){
   tabela = c(0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45)
   Autoval = list()
   for(i in 1:length(lista)){
-    Autoval[[i]] = (abs(Re(eigen(lista[[i]])$values)[1]-length(lista[[i]][1,]))/(length(lista[[i]][1,])-1))/tabela[length(lista[[i]][1,])]
+    Autoval[[i]] = (abs(max(Re(eigen(lista[[i]])$values))-length(lista[[i]][1,]))/(length(lista[[i]][1,])-1))/tabela[length(lista[[i]][1,])]
   }
   names(Autoval) = names(lista)
   auxiliar = as_tibble(Autoval)
