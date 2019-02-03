@@ -1,39 +1,82 @@
-# Argumentos: lista = a lista que contem todos os quadros de julgamentos;
-#mapeamento = vetor que informa cada criterio e seus subcritérios e por fim qtd de alternativas
-tabela2_ahp = function(lista, mapeamento){
-  normalizado = normaliza(lista)
-  
-}
+# 
+# # Argumentos: lista = a lista que contem todos os quadros de julgamentos;
+# #mapeamento = vetor que informa cada criterio e seus subcritérios e por fim qtd de alternativas
+# tabela2_ahp = function(lista, mapeamento){
+#   normalizado = normaliza(lista)
+#   
+#   
+#   
+#   
+# }
+# 
+# #Conta quantos subniveis existem no mapeamento
+# contaSubNivel = function(mapeamento){
+#   mapeamento = mapeamento[3:(length(mapeamento)-1)]
+#   cont = sum(mapeamento!=0)
+#   return(cont)
+# }
+# 
+# 
+# 
+# ####Rascunho
+# mapeamento = c(1,3,3,3,3,4)
+# tabela = Ler("F://GitHub//AHP//Documentação//BD_teste3.xlsx")
+# normalizado = normaliza(tabela)
+# normalizado
+# #Contagens importantes
+#   numeroTotSubcriterios = sum(mapeamento[3:(length(mapeamento)-1)])
+#   numeroTotSubcriterios
+#   qtdSubniveis = contaSubNivel(mapeamento)
+#   qtdSubniveis
+# #
+# #Pesos de criterios e subcriterios
+#   pesosCriterios = list()
+#   pesosCriterios[[1]] = normalizado[[1]]
+#   names(pesosCriterios) = names(normalizado[1])
+#   pesosCriterios
+#   #Estou criando uma lista com as prop dos subniveis e dando nome para cada vetor de prop
+#     pesosSubcriterios = list()
+#     nomesSubcriterios = c()
+#   for(i in 1:qtdSubniveis){
+#     pesosSubcriterios[[i]] = normalizado[[i+1]]
+#     nomesSubcriterios[i] = names(normalizado[i+1])
+#   }
+#   names(pesosSubcriterios) = nomesSubcriterios
+#   pesosSubcriterios
+#   #
+# #
+# #Pesos das matrizes de comparação envolvendo as alternativas
+#   pesosMAlternativas = list()
+#   cont = 1
+#   nomesMalternativas = c()
+#   for(i in (length(pesosCriterios)+length(pesosSubcriterios)+1):length(normalizado)){
+#     pesosMAlternativas[[cont]] = normalizado[[i]]
+#     nomesMalternativas[cont] = names(normalizado[i])
+#     cont = cont +1
+#   }
+#   names(pesosMAlternativas) = nomesMalternativas
+#   pesosMAlternativas
+# #
+#   
+# #Calculos de prop de subcriterios globais
+#   mapeamento
+#   qtdSubniveis
+#   pesosCriterios
+#   pesosSubcriterios
+#   criteriosComSubniveis = ifelse(mapeamento[3:(length(mapeamento)-1)]==0,0,1)
+#   criteriosComSubniveis  
+#   for(i in 1:mapeamento[2]){
+#     if(criteriosComSubniveis[i]==1){
+#       pesosSubcriterios[[i]] = pesosSubcriterios[[i]]*pesosCriterios[[1]][[i]]
+#     }
+#   }  
+#   pesosSubcriterios
+# 
+# #Calculando vetor de probabilidade das alternativas
+#   numAlternativas = mapeamento[length(mapeamento)]
+#   numAlternativas
+#   criteriosComSubniveis
+#   qtdSubniveis  
+#   numeroTotSubcriterios
 
-####Rascunho
-mapeamento = c(1,3,3,3,3,4)
-tabela = Ler("F://GitHub//AHP//Documentação//BD_teste3.xlsx")
-normalizado = normaliza(tabela)
-normalizado
-#Contagens importantes
-numeroTotSubcriterios = sum(mapeamento[3:(length(mapeamento)-1)])
-numeroTotSubcriterios
-qtdSubniveis = contaSubNivel(mapeamento)
-qtdSubniveis
-#
-#Pesos de criterios e subcriterios
-pesosCriterios = normalizado[[1]]
-pesosCriterios
-pesosSubcriterios = list()
-for(i in 1:qtdSubniveis){
-  pesosSubcriterios[[i]] = normalizado[[i+1]]
-}
-pesosSubcriterios
-#
 
-#Conta quantos subniveis existem no mapeamento
-contaSubNivel = function(mapeamento){
-  mapeamento = mapeamento[3:(length(mapeamento)-1)]
-  cont = 0
-  for(i in 1:length(mapeamento)){
-    if(mapeamento[i] != 0){
-      cont = cont +1
-    }
-  }
-  return(cont)
-}
