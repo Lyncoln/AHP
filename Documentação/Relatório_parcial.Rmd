@@ -1,0 +1,94 @@
+--- 
+title: "Universidade Federal Fluminense"
+date: "23 de março de 2019"
+
+output:
+  word_document
+        
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+setwd("F://GitHub//AHP")
+```
+
+## Relatório Parcial
+
+
+- Título: Implementando a AHP com o R 
+- Autores: Lyncoln Sousa de Oliveira(Bolsista),<br>
+           Profa. Luciane Ferreira Alcoforado(Coordenadora)
+           
+## Introdução
+  <p>
+  O processo de tomada de decisão tem mostrado importante em qualquer situação. Tendo em vista esse pessamento, é interessante estudar como esses métodos funcionam e como podem ser usados para ajudar em situações práticas. 
+  </p>
+  <p>
+  Com isso, estudamos o processo Analytic Hierarchy Process (AHP), baseado em matemática e psicologia, desenvolvido na década de 1970 pelo professor Thomas Saaty e sua aplicação utilizando o softwade R para automatização de contas e obtenção de resultados de maneira intuitiva para o usuário.
+  </p>
+
+## Fundamentação teórica
+  
+  <p>
+  A tomada de decisão nas organizações tem sido objeto de constantes pesquisas e estudos comprovando a importância que este tema representa no desempenho dessas organizações. Um sistema de apoio à decisão (SAD) é uma ferramenta geralmente computacional que pode envolver modernas técnicas de sistemas de informação, inteligência artificial, métodos quantitativos de estatística, psicologia cognitiva e comportamental, sociologia das organizações, entre outros, e visam oferecer ao usuário condições favoráveis e acessíveis ao suporte, para de modo prático, melhor escolher uma entre diversas alternativas, minimizando assim a chance de erro na tomada de decisão (GOMES et al., 2002).
+  </p>
+  <p>  
+  Um SAD concilia os recursos intelectuais individuais com a capacidade do computador em melhorar a qualidade da decisão (MORTON E KEEN, 1978), assim, o apoio à decisão significa auxiliar a tomada de decisão na escolha de alternativas, gerando as estimativas dos pesos destas alternativas, a comparação e a escolha. 
+  </p>
+  <p>
+  Neste projeto, está sendo implementado o Método de Análise Hierárquica (AHP) proposto por (SAATY, 1991). O AHP pode ser classificado como um dos mais conhecidos e utilizados métodos de análise multicritério cuja modelagem se divide em três etapas: construção dos níveis hierárquicos, definição das prioridades através de julgamentos paritários dos critérios estabelecidos e avaliação da consistência lógica dos julgamentos paritários. 
+  </p>
+  <p>
+  Está sendo utilizada a linguagem de programação R para essa implementação pois é livre e gratuita, possui grande comunidade ativa no mundo da programação e ferramentas que facilitam a execução dos passos.
+  </p>
+
+## Objetivos 
+
+Objetivo Geral: Implementar o método AHP utilizando a linguagem computacional R. 
+
+Objetivo Específico: Compreender o método AHP e suas etapas; elaborar a estrutura do banco de dados para os valores de entrada; elaborar a estrutura de saída dos resultados; desenvolver a habilidade de programação; construir funções específicas para o desenvolvimento do método
+
+## Metodologia 
+
+  Inicialmente foi utilizado o livro "Introdução ao Método de Análise Hierarquica" do professor Helder Gomes Costa da UFF. Seguindo o livro,foi feito um resumo utilizando também o software R para a criação de um documento html para guiar a criação do código. Em resumo o AHP segue 4 etapas :  Construção de Hierarquia, aquisição de dados, síntese dos dados e a análise da consistencia do julgamento.
+  O nosso foco é utilizar a linguagem R para criar processos em que, dado que o usário apresente os dados já tratados para a utilização do AHP, o programa apresente no final uma tabela de probabilidades(proporções) de preferencia das alternativas em relação a hierarquização feita pelo usuário. Assim, será fácil a escolha entre elas mediante as suas proporções geradas pelo programa.
+  
+  Uma sistema hierarquico pode ser construido de 3 formas diferentes que classificamos pessoalmente de simples, composto e misto. Um sistema simples é aquele que não possui subniveis(subcritérios), isso é, um critério depende exclusivamente dele. Um exemplo de sistema simples é : 
+  
+  ![](Figuras//1.png) 
+
+  Um sistema composto é feito de critérios com subniveis exclusivamente, isto é, há critérios que dependem de outros critérios. Um exemplo para esse tipo de hierarquia é dado por : 
+  
+  ![](C://Users//Lyncoln//Desktop//Figura 2.png)
+  
+  Um sistema misto é feito por critérios com ou sem subniveis, isto é, podem haver critérios com subniveis ou podem haver critérios sem subniveis.  
+  
+  ![](Figuras//3.png)
+  
+  O método AHP exige que o usuário tenha consultado especialistas para que os mesmo atribuam notas para cada critério. Essas notas são dadas de maneira em que cada critério é posto em comparação para cada alternativa e no final as alternativas são comparadas entre si, obtendo assim uma matrizes de julgamentos. O nosso programa exige que o usuário tenha essas matriz de julgamentos em uma planilha do excel. Esperamos que o usuário tenha um arquivo de planilha contendo várias **subplanilhas, onde cada uma representa uma matriz de julgamento.
+  Como os especialistas são humanos, o AHP prevê que pode haver inconsistência, então o processo permite que haja uma inconsistência de no 10% para que os resultados possuam credibilidade.
+  
+  Para cada tipo de classificação abordamos o problema de diferente maneira com a linguagem R, atualmente, resolvemos bem o problema para o modelo simples, e resolvemos de maneira não completa para o sistema composto e ainda não começamos a trabalhar com o sistema misto.
+  
+  Atualmente para problemas do tipo simples, nosso programa retorna uma tabela completa de proporções para as alternativas e a melhor alternativa a ser escolhida, conjuntamente se o questionário de julgamentos do AHP está consistente ou não. Exemplo de saída para a base de dados do livro do professor Helder: 
+  
+  ![](C://Users//Lyncoln//Desktop//Figura 3.png)
+  
+  Para problemas do tipo composto, atualmente nosso programa retorna um conjunto de proporções para as alternativas estudadas, diferente do tipo simples que retorna uma tabela completa das proporções junto com suas consistencias. Um exemplo de saída para a base de dados tirada da internet :
+  Hierarquia : 
+  ![](F://GitHub//AHP//Documentação//Hierarquia.png)
+  Temos a seguinte saída : 
+  ![](C://Users//Lyncoln//Desktop//Figura 4.png)
+  Onde cada proporção está associada a altenativa da sua respectiva posição (S1, S2, S3, S4)
+  
+  Precisamos trabalhar mais nesse tipo de problema para que retorne uma tabela organizada como no caso simples, mas não é algo trivial, tendo em vista que é preciso mudar a maneira que abordamos o problema para cada tipo.
+  Quando finalizarmos a saída completa da tabela para o caso simples, iremos trabalhar no caso misto, que nada mais é que a junção dos casos simples e mistos.
+  Após finalizados os processos para todos os tipos de hierarquia, iremos trabalhar na visualização da tabela, a deixando mais atrativa para o usuário.
+  
+  O projeto é desenvolvido na plataforma github, pode ser acessado pelo endereço : https://github.com/Lyncoln/AHP
+  
+  
+Referencias(não sei escrever padronizado) :
+Livro do professor helber, Livro do saaty , http://www.lbd.dcc.ufmg.br/colecoes/sbsi/2012/0041.pdf
+  
+  
