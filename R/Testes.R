@@ -7,7 +7,7 @@ contaSubNivel = function(mapeamento){
   cont = sum(mapeamento!=0)
   return(cont)
 }
-tabela2_ahp = function(caminho, mapeamento){
+tabela2_ahp_xlsx = function(caminho, mapeamento,alternativas = c()){
 
 ####Rascunho
 #mapeamento = c(1,3,3,3,3,4)
@@ -96,7 +96,11 @@ normalizado
   for(i in 1:numAlternativas){
     pesosAlternativaFinal[i] = sum(pesosAlternativas[[i]])
   }
-  return(pesosAlternativaFinal)  
+  if(length(alternativas)==0) alternativas = LETTERS[1:length(pesosAlternativaFinal)]
+  
+  return(tibble(alternativas,pesosAlternativaFinal)%>%
+           arrange(pesosAlternativaFinal) %>%
+           rename(Pesos = pesosAlternativaFinal))  
 } 
-tabela2_ahp("F://GitHub//AHP//Documentação//BD_teste3.xlsx",mapeamento = c(1,3,3,3,3,4))
+tabela2_ahp_xlsx("F://GitHub//AHP//Documentação//BD_teste3.xlsx",mapeamento = c(1,3,3,3,3,4))
 #Referencia: http://www.lbd.dcc.ufmg.br/colecoes/sbsi/2012/0041.pdf
