@@ -1,4 +1,5 @@
-# 
+
+
 # Argumentos: lista = a lista que contem todos os quadros de julgamentos;
 #mapeamento = vetor que informa cada criterio e seus subcritérios e por fim qtd de alternativas
 #Conta quantos subniveis existem no mapeamento
@@ -7,6 +8,26 @@ contaSubNivel = function(mapeamento){
   cont = sum(mapeamento!=0)
   return(cont)
 }
+#' Tabela AHP para listas
+#' 
+#' Essa funcao aplica o metodo AHP de saaty em listas
+#'
+#'@param caminho caminho para um arquivo xlsx contendo as comporacoes entre criterios e alternativas, e por fim, comparacao entre criterios
+#'
+#'@param alternativas vetor que contem o nome das alternativas, se vazio, sera gerado automaticamente 
+#'pelas letras do alfabeto (A:Z) 
+#'
+#'@param mapeamento vetor contendo informações sobre as posições dos critérios e subcritérios.
+#'
+#'@return retorna tabela de relacoes de preferencia entre criterios
+#'
+#'@import readxl
+#'@import dplyr
+#'@import tidyr
+#'@import tibble
+#'@import purrr
+#'
+#'@export 
 tabela2_ahp_xlsx = function(caminho, mapeamento,alternativas = c()){
 
 ####Rascunho
