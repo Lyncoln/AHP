@@ -3,7 +3,7 @@ title: "Tutorial do pacote"
 author: "Luciane e Lyncoln"
 date: "4 de abril de 2019"
 output:
-  pdf_document: 
+  pdf_document:
     fig_height: 2
     fig_width: 3
   html_document: default
@@ -143,7 +143,7 @@ A documentação desta função pode ser vista na figura 2.
 
 Basta executar a função **tabela_ahp_xlsx** que será fornecido uma tabela com os cálculos do processo. A partir daí já é possível tomar uma decisão. Neste exemplo observa-se que a melhor decisão é a alternativa A1
 ```{r}
-caminho="C:\\Users\\TPC02\\Documents\\GitHub\\AHP\\data\\BD_teste1.xlsx"
+caminho="BD_teste1.xlsx"
 resultado=tabela_ahp_xlsx(caminho)
 resultado
 ```
